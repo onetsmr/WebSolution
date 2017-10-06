@@ -1,0 +1,18 @@
+﻿<h1 class="page-header">Roles</h1>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="role in Roles">
+                <td><a href="javascript://" ng-click="OpenDialog(role.Id)" ng-bind="role.Id"></a></td>
+                <td ng-bind="role.Name"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
