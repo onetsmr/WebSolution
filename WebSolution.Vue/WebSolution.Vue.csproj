@@ -156,30 +156,30 @@
     <Content Include="Client\Application\app-dependencies.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\modules.html">
+    <Content Include="Client\Application\modules\modules.html">
       <DependentUpon>modules.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\modules.js" />
+    <Content Include="Client\Application\modules\modules.js" />
     <Content Include="Client\Application\app-routing.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
     <Content Include="Client\Application\app.js" />
-    <Content Include="Client\Application\screens\dashboard.html">
+    <Content Include="Client\Application\modules\dashboard\dashboard.html">
       <DependentUpon>dashboard.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\role.html">
+    <Content Include="Client\Application\modules\roles\role\role.html">
       <DependentUpon>role.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\role.js" />
-    <Content Include="Client\Application\screens\roles.html">
+    <Content Include="Client\Application\modules\roles\role\role.js" />
+    <Content Include="Client\Application\modules\roles\roles.html">
       <DependentUpon>roles.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\roles.js" />
-    <Content Include="Client\Application\screens\users.html">
+    <Content Include="Client\Application\modules\roles\roles.js" />
+    <Content Include="Client\Application\modules\users\users.html">
       <DependentUpon>users.js</DependentUpon>
     </Content>
-    <Content Include="Client\Application\screens\users.js" />
-    <Content Include="Client\Application\screens\dashboard.js" />
+    <Content Include="Client\Application\modules\users\users.js" />
+    <Content Include="Client\Application\modules\dashboard\dashboard.js" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap.css" />

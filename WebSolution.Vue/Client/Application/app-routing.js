@@ -1,7 +1,7 @@
 ﻿const routes = [
-    { path: '/', component: Vue.component('Dashboard') },
-    { path: '/Roles', component: Vue.component('Roles') },
-    { path: '/Users', component: Vue.component('Users') }
+    { path: '/', component: Vue.component('dashboard') },
+    { path: '/Roles', component: Vue.component('roles') },
+    { path: '/Users', component: Vue.component('users') }
 ]
 
 const router = new VueRouter({

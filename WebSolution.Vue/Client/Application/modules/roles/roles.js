@@ -1,5 +1,5 @@
-﻿Vue.component('Modules', function (resolve, reject) {
-    Vue.http.get('/api/application/template/' + 'modules').then(
+﻿Vue.component('roles', function (resolve, reject) {
+    Vue.http.get('/api/application/template/' + 'roles').then(
         response => {
             resolve({
                 template: response.body,
@@ -13,10 +13,10 @@
                 },
                 methods: {
                     loadData() {
-                        this.$http.get('/api/application/modules').then(response => {
+                        this.$http.get('/api/roles').then(response => {
                             this.items = response.body;
                         }, response => {
-                            // error callback
+                            // load data error callback
                         });
                     }
                 }

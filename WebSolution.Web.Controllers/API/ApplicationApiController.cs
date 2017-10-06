@@ -4,6 +4,7 @@ using System.Web;
 using System.Web.Http;
 using WebSolution.Models;
 using WebSolution.Web.Controllers.API.Base;
+using WebSolution.Web.Infrastructure.Screens;
 
 namespace WebSolution.Web.Controllers.API
 {
@@ -43,10 +44,11 @@ namespace WebSolution.Web.Controllers.API
             return modules;
         }
 
-        [Route("template/{templatePath}"), HttpGet]
-        public string GetTemplate(string templatePath)
+        [Route("template/{templateName}"), HttpGet]
+        public string GetTemplate(string templateName)
         {
-            var templateFilePath = $"~\\Client\\Application\\screens\\{templatePath}.html";
+            var templatePath = ScreenTemplates.GetTemplatePath(templateName);
+            var templateFilePath = $"~\\Client\\Application\\{templatePath}";
             var templateFileName = HttpContext.Current.Request.MapPath(templateFilePath);
             return File.ReadAllText(templateFileName);
         }

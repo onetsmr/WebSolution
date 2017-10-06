@@ -1,4 +1,4 @@
-﻿Vue.component('Users', function (resolve, reject) {
+﻿Vue.component('users', function (resolve, reject) {
     Vue.http.get('/api/application/template/' + 'users').then(
         response => {
             resolve({

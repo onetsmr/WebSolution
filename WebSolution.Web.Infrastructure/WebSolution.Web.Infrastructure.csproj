@@ -90,6 +90,7 @@
     <Compile Include="Security\ApplicationUserStore.cs" />
     <Compile Include="Security\ChallengeResult.cs" />
     <Compile Include="Security\ICurrentUser.cs" />
+    <Compile Include="Screens\ScreenTemplates.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebSolution.Data\WebSolution.Data.csproj">
