@@ -153,13 +153,33 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Client\Application\components\app-routing.js" />
+    <Content Include="Client\Application\app-dependencies.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\modules.html">
+      <DependentUpon>modules.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\modules.js" />
+    <Content Include="Client\Application\app-routing.js">
+      <DependentUpon>app.js</DependentUpon>
+    </Content>
     <Content Include="Client\Application\app.js" />
-    <Content Include="Client\Application\components\app-menu.js" />
-    <Content Include="Client\Application\views\Dashboard.html" />
-    <Content Include="Client\Application\views\RoleAddEdit.html" />
-    <Content Include="Client\Application\views\RoleListView.html" />
-    <Content Include="Client\Application\views\UserListView.html" />
+    <Content Include="Client\Application\screens\dashboard.html">
+      <DependentUpon>dashboard.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\role.html">
+      <DependentUpon>role.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\role.js" />
+    <Content Include="Client\Application\screens\roles.html">
+      <DependentUpon>roles.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\roles.js" />
+    <Content Include="Client\Application\screens\users.html">
+      <DependentUpon>users.js</DependentUpon>
+    </Content>
+    <Content Include="Client\Application\screens\users.js" />
+    <Content Include="Client\Application\screens\dashboard.js" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap-theme.css" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="Client\Infrastructure\bootstrap\css\bootstrap.css" />
