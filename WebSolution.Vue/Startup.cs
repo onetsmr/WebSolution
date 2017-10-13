@@ -13,9 +13,11 @@ namespace WebSolution.Vue
 
             Web.Infrastructure.Screens.ScreenTemplates.Init(new Dictionary<string, string>
             {
+                { "modalDialog", "components\\modalDialog.html" },
                 { "modules", "modules\\modules.html" },
                 { "dashboard", "modules\\dashboard\\dashboard.html" },
                 { "roles", "modules\\roles\\roles.html" },
+                { "role", "modules\\roles\\role\\role.html" },
                 { "users", "modules\\users\\users.html" },
             });
         }

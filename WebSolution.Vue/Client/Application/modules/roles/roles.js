@@ -18,6 +18,12 @@
                         }, response => {
                             // load data error callback
                         });
+                    },
+                    openDialog(item) {
+                        item.ShowEditDialog = true;
+                    },
+                    closeDialog(item) {
+                        item.ShowEditDialog = false;
                     }
                 }
             })

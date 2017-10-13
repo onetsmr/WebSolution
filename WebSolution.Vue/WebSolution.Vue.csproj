@@ -156,6 +156,7 @@
     <Content Include="Client\Application\app-dependencies.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
+    <Content Include="Client\Application\components\modalDialog.js" />
     <Content Include="Client\Application\modules\modules.html">
       <DependentUpon>modules.js</DependentUpon>
     </Content>

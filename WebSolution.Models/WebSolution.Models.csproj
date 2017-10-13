@@ -35,6 +35,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\Module.cs" />
+    <Compile Include="Base\BaseAddEditModel.cs" />
+    <Compile Include="Base\BaseListViewModel.cs" />
     <Compile Include="Login\ExternalLoginListViewModel.cs" />
     <Compile Include="Login\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

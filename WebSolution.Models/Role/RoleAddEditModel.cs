@@ -1,11 +1,10 @@
 ﻿using WebSolution.Data;
+using WebSolution.Models.Base;
 
 namespace WebSolution.Models
 {
-    public class RoleAddEditModel
+    public class RoleAddEditModel : BaseAddEditModel
     {
-        public int Id { get; set; }
-
         public string Name { get; set; }
 
         public static RoleAddEditModel MapFrom(Role entity)

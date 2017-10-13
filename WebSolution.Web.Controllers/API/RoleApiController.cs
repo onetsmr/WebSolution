@@ -24,5 +24,29 @@ namespace WebSolution.Web.Controllers.API
                 .Select(e => RoleAddEditModel.MapFrom(e))
                 .SingleOrDefault(e => e.Id == id);
         }
+
+        [Route("{Id}"), HttpPost]
+        public RoleAddEditModel SaveRole(RoleAddEditModel model)
+        {
+            var entity = DataBase.Roles.SingleOrDefault(e => e.Id == model.Id);
+
+            if (entity == null)
+            {
+                entity = new Role
+                {
+                    Id = DataBase.Roles.Max(e => e.Id) + 1,
+                    Name = model.Name,
+                    RoleType = RoleTypeOption.Standard
+                };
+
+                DataBase.Roles.Add(entity);
+            }
+            else
+            {
+                entity.Name = model.Name;
+            }
+
+            return GetRole(model.Id);
+        }
     }
 }
