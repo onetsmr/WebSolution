@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using WebSolution.Data;
 using WebSolution.Models;
+using WebSolution.Models.Mappers;
 using WebSolution.Web.Controllers.API.Base;
 
 namespace WebSolution.Web.Controllers.API
@@ -14,39 +15,34 @@ namespace WebSolution.Web.Controllers.API
         [Route(""), HttpGet]
         public IEnumerable<RoleListViewModel> GetRoles()
         {
-            return DataBase.Roles.Select(e => RoleListViewModel.MapFrom(e));
+            return DataBase.Roles.Select(e => e.MapFrom());
         }
 
         [Route("{Id}"), HttpGet]
         public RoleAddEditModel GetRole(int id)
         {
-            return DataBase.Roles
-                .Select(e => RoleAddEditModel.MapFrom(e))
-                .SingleOrDefault(e => e.Id == id);
+            return DataBase.GetRole(id).MapTo();
         }
 
         [Route("{Id}"), HttpPost]
         public RoleAddEditModel SaveRole(RoleAddEditModel model)
         {
-            var entity = DataBase.Roles.SingleOrDefault(e => e.Id == model.Id);
+            var entity = DataBase.GetOrCreateRole(model.Id);
 
-            if (entity == null)
+            entity.MapFrom(model);
+
+            return GetRole(entity.Id);
+        }
+
+        [Route("{Id}"), HttpDelete]
+        public RoleAddEditModel DeleteRole(int id)
+        {
+            DataBase.DeleteRole(id);
+
+            return new RoleAddEditModel
             {
-                entity = new Role
-                {
-                    Id = DataBase.Roles.Max(e => e.Id) + 1,
-                    Name = model.Name,
-                    RoleType = RoleTypeOption.Standard
-                };
-
-                DataBase.Roles.Add(entity);
-            }
-            else
-            {
-                entity.Name = model.Name;
-            }
-
-            return GetRole(model.Id);
+                Id = id
+            };
         }
     }
 }

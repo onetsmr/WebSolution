@@ -1,5 +1,4 @@
-﻿using WebSolution.Data;
-using WebSolution.Models.Base;
+﻿using WebSolution.Models.Base;
 
 namespace WebSolution.Models
 {
@@ -7,13 +6,6 @@ namespace WebSolution.Models
     {
         public string Name { get; set; }
 
-        public static RoleListViewModel MapFrom(Role entity)
-        {
-            return new RoleListViewModel
-            {
-                Id = entity.Id,
-                Name = entity.Name
-            };
-        }
+        public string RoleType { get; set; }
     }
 }

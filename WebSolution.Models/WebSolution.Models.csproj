@@ -42,6 +42,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role\RoleAddEditModel.cs" />
     <Compile Include="Role\RoleListViewModel.cs" />
+    <Compile Include="Role\Mappers\RoleListViewModelMapper.cs" />
+    <Compile Include="Role\Mappers\RoleAddEditModelMapper.cs" />
     <Compile Include="User\UserListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

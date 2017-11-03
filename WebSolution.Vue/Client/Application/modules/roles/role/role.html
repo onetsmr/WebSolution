@@ -6,8 +6,15 @@
     <div class="modal-body">
         <p>
             <div class="form-group">
-                <label for="Name">Name:</label>
-                <input type="text" class="form-control" id="Name" v-model="entity.Name">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" v-model="entity.Name" autofocus>
+            </div>
+            <div class="form-group">
+                <label for="RoleType">Role Type</label>
+                <select class="form-control" id="RoleType" v-model="entity.RoleType">
+                    <option value="1">Admin</option>
+                    <option value="2">Standard</option>
+                </select>
             </div>
         </p>
     </div>

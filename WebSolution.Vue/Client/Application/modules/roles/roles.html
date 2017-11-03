@@ -1,18 +1,33 @@
 ﻿<div>
     <h1 class="page-header">Roles</h1>
 
+    <div style="text-align: right;">
+        <button type="button" class="btn btn-primary" @click="openAddDialog()" data-toggle="modal" data-target="#roleAdd">Add</button>
+    </div>
+    <role id="roleAdd" :show="showAddDialog" :entityId="0" @close="closeAddDialog()"></role>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
                 <tr>
                     <th>Name</th>
+                    <th>Role Type</th>
+                    <th class="col-md-1">Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr v-for="item in items">
                     <td>
-                        <role :id="'role' + item.Id" :show="item.ShowEditDialog" :entityId="item.Id" @close="closeDialog(item)"></role>
-                        <a href="javascript://" @click="openDialog(item)" data-toggle="modal" :data-target="'#role' + item.Id">{{ item.Name }}</a>
+                        <role :id="'role' + item.Id" :show="item.ShowEditDialog" :entityId="item.Id" @close="closeEditDialog(item)"></role>
+                        <a href="javascript://" @click="openEditDialog(item)" data-toggle="modal" :data-target="'#role' + item.Id">{{ item.Name }}</a>
+                    </td>
+                    <td>
+                        {{ item.RoleType }}
+                    </td>
+                    <td class="col-md-1">
+                        <button type="button" class="btn btn-xs" @click="remove(item)" data-toggle="confirmation" data-title="Are you sure?">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </button>
                     </td>
                 </tr>
             </tbody>

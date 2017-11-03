@@ -7,13 +7,6 @@ namespace WebSolution.Models
     {
         public string Name { get; set; }
 
-        public static RoleAddEditModel MapFrom(Role entity)
-        {
-            return new RoleAddEditModel
-            {
-                Id = entity.Id,
-                Name = entity.Name
-            };
-        }
+        public RoleTypeOption RoleType { get; set; }
     }
 }

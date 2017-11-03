@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace WebSolution.Data
 {
@@ -57,19 +58,63 @@ namespace WebSolution.Data
             Roles[1].Users.Add(Users[1]);
         }
 
-        public static List<Role> Roles { get; private set; }
+        #region Roles
 
-        public static List<User> Users { get; private set; }
+        public static List<Role> Roles { get; private set; }
 
         public static IEnumerable<Role> GetAllRoles()
         {
             return Roles;
         }
 
+        public static Role GetRole(int id)
+        {
+            return Roles.SingleOrDefault(e => e.Id == id);
+        }
+
+        public static void AddRole(Role entity)
+        {
+            Roles.Add(entity);
+        }
+
+        public static void DeleteRole(int id)
+        {
+            Roles.Remove(GetRole(id));
+        }
+
+        public static Role GetOrCreateRole(int id)
+        {
+            var entity = GetRole(id);
+
+            if (entity == null)
+            {
+                entity = CreateRole();
+                Roles.Add(entity);
+            }
+
+            return entity;
+        }
+
+        private static Role CreateRole()
+        {
+            return new Role
+            {
+                Id = Roles.Max(e => e.Id) + 1
+            };
+        }
+
+        #endregion
+
+        #region Users
+
+        public static List<User> Users { get; private set; }
+
         public static IEnumerable<User> GetAllUsers()
         {
             return Users;
         }
+
+        #endregion
     }
 
     public enum RoleTypeOption

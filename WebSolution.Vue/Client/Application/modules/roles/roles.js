@@ -5,7 +5,8 @@
                 template: response.body,
                 data: function () {
                     return {
-                        items: []
+                        items: [],
+                        showAddDialog: false
                     }
                 },
                 created() {
@@ -19,11 +20,26 @@
                             // load data error callback
                         });
                     },
-                    openDialog(item) {
+                    openAddDialog() {
+                        this.showAddDialog = true;
+                    },
+                    closeAddDialog() {
+                        this.showAddDialog = false;
+                        this.loadData();
+                    },
+                    openEditDialog(item) {
                         item.ShowEditDialog = true;
                     },
-                    closeDialog(item) {
+                    closeEditDialog(item) {
                         item.ShowEditDialog = false;
+                        this.loadData();
+                    },
+                    remove(item) {
+                        this.$http.delete('/api/roles/' + item.Id).then(response => {
+                            this.loadData()
+                        }, response => {
+                            // remove error callback
+                        });
                     }
                 }
             })
